@@ -106,7 +106,7 @@
 	return years;
 } */
 
-function longest(s1, s2) {
+/* function longest(s1, s2) {
   let s1Arr = s1.split("");
 	let s2Arr = s2.split("");
 	const commonArray = s1Arr.concat(s2Arr);
@@ -119,6 +119,54 @@ function longest(s1, s2) {
 	
 
 	return Object.keys(res).sort().join("");
+} */
+
+/* function DNAtoRNA(dna) {
+const dnaArray = dna.split("").map((el) => {
+	return el === "T" ? "U" : el;
+});
+return dnaArray.join("");
+} */
+//Sum of the first nth term of Series
+//https://www.codewars.com/kata/555eded1ad94b00403000071/train/javascript
+/* function SeriesSum(n){
+	let res = 0;
+	let step = 3;
+	if(1 / (1 + (step * (n - 1))) === 1){
+		res = 1;
+	} else {
+		res += 1
+		SeriesSum(n - 1)
+	}
+	return res;
+} */
+
+function high(x){
+  const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    const arrayOfArrays = x.split(" ");
+    const hightestIndex = arrayOfArrays.map((el) => {
+        let highIndex = 0;
+        for (let i = 0; i < el.length; i++){
+					console.log(`highIndex: ${highIndex}`);
+            alphabet.forEach((elem, ind) => {
+                if (el[i] === elem) {
+                  console.log("я тут");
+                    if (highIndex < (ind + 1)) {
+											console.log("я тут" + (ind + 1));
+											highIndex = ind + 1;
+                    }
+                }
+            })
+        }
+        return highIndex;
+    });
+		const filtredArr = hightestIndex.sort((a, b) => {
+			console.log(b - a);
+			return b - a;
+		});
+		console.log(filtredArr);
+		const index = hightestIndex.findIndex((el) => { el === filtredArr[0]})
+    return index;
 }
 
-console.log("🚀 ~ file: index.js result ", longest("aretheyhere", "yestheyarehere"));
+console.log("🚀 ~ file: index.js result ", high('man i need'));
