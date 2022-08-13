@@ -141,18 +141,15 @@ return dnaArray.join("");
 	return res;
 } */
 
-function high(x){
+/* function high(x){
   const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     const arrayOfArrays = x.split(" ");
     const hightestIndex = arrayOfArrays.map((el) => {
         let highIndex = 0;
         for (let i = 0; i < el.length; i++){
-					console.log(`highIndex: ${highIndex}`);
             alphabet.forEach((elem, ind) => {
                 if (el[i] === elem) {
-                  console.log("я тут");
                     if (highIndex < (ind + 1)) {
-											console.log("я тут" + (ind + 1));
 											highIndex = ind + 1;
                     }
                 }
@@ -160,13 +157,61 @@ function high(x){
         }
         return highIndex;
     });
-		const filtredArr = hightestIndex.sort((a, b) => {
-			console.log(b - a);
+    console.log("🚀 ~ file: index.js ~ line 163 ~ hightestIndex ~ hightestIndex", hightestIndex)
+		const filtredArr = [...hightestIndex];
+		filtredArr.sort((a, b) => {
 			return b - a;
 		});
+
 		console.log(filtredArr);
-		const index = hightestIndex.findIndex((el) => { el === filtredArr[0]})
-    return index;
+		const index = hightestIndex.findIndex((el) => { return el == filtredArr[0]})
+    return arrayOfArrays[index];
+} */
+
+/* function maps(x){
+	return x.map((el) => el * 2);
+} */
+
+
+/* function isPangram(string){
+  const charArray = string.toLowerCase().split("").reduce((acc, el) => {
+		if(el.match(/\w+/g)) {
+			if(acc[el]) {
+				acc[el] += 1;
+			} else {
+				acc[el] = 1;
+			}
+		}
+		return acc;
+	}, {});
+	const alphabetNumber = 26;
+	return Object.keys(charArray).length >= alphabetNumber;
+}
+ */
+
+
+function isValidWalk(walk) {
+  const walkMap = walk.reduce((acc, el) => {
+		if(acc[el]) {
+			acc[el] += 1;
+		} else {
+			acc[el] = 1;
+		}
+		return acc;
+	}, {});
+
+	let place = 0;
+	if(walkMap['e'] === walkMap['w']) {
+		place += 0;
+	} else {
+		place += 1;
+	}
+	if(walkMap['n'] === walkMap['s']) {
+		place += 0;
+	} else {
+		place += 1;
+	}
+	return (place === 0 && walk.length <= 10 && walk.length !== 0);
 }
 
-console.log("🚀 ~ file: index.js result ", high('man i need'));
+console.log("🚀 ~ file: index.js result ", isValidWalk(['n','s','n','s','n','s','n','s','n','s']));
