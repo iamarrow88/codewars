@@ -190,7 +190,7 @@ return dnaArray.join("");
  */
 
 
-function isValidWalk(walk) {
+/* function isValidWalk(walk) {
   const walkMap = walk.reduce((acc, el) => {
 		if(acc[el]) {
 			acc[el] += 1;
@@ -212,6 +212,61 @@ function isValidWalk(walk) {
 		place += 1;
 	}
 	return (place === 0 && walk.length <= 10 && walk.length !== 0);
+} */
+
+/* function booleanToString(b){
+  return String(b);
+} */
+
+
+/* function makeNegative(num) {
+	return num > 0 ? -num : num;
+}
+ */
+
+/* function greet(name){
+  return `Hello, ${name} how are you doing today?`;
+} */
+
+/* function removeSmallest(numbers) {
+	const res = [...numbers];
+
+	if (numbers.length > 1) {
+		const newNumbers = [...numbers];
+	newNumbers.sort((a,b) => {
+		return a - b;
+	});
+	const index = numbers.findIndex((el) => {
+		return el == newNumbers[0];
+	});
+	res.splice(index, 1);
+	}
+	return res;
+} */
+
+/* function towerBuilder(nFloors) {
+  let res = [];
+	const chars = 1 + 2 * (nFloors - 1);
+	for (let i = 0; i < nFloors; i++) {
+		const floorChars = 1 + 2 * i;
+		const spaces = (chars - floorChars) / 2;
+		const item = (" ").repeat(spaces) + ("*").repeat(floorChars) + (" ").repeat(spaces);
+		res.push(item);
+	}
+	return res;
+} */
+
+function find_average(array) {
+	let res;
+  if (array.length <= 0) {
+		res = 0;
+	} else {
+		res = array.reduce((acc, el) => {
+			return acc + el;
+		}) / array.length;
+	}
+  return res;
 }
 
-console.log("🚀 ~ file: index.js result ", isValidWalk(['n','s','n','s','n','s','n','s','n','s']));
+
+console.log("🚀 ~ file: index.js result ", find_average([1,2,3,4]));
