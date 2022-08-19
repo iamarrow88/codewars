@@ -256,7 +256,7 @@ return dnaArray.join("");
 	return res;
 } */
 
-function find_average(array) {
+/* function find_average(array) {
 	let res;
   if (array.length <= 0) {
 		res = 0;
@@ -266,7 +266,38 @@ function find_average(array) {
 		}) / array.length;
 	}
   return res;
+} */
+
+/* function sumMix(x){
+	return x.reduce((acc, el) => acc + +el, 0);
+} */
+
+/* function hero(bullets, dragons){
+	return bullets >= dragons * 2
+} */
+
+/* function getCount(str) {
+	const vowels = [ "a", "e", "i", "o", "u"];
+	const charArray = str.split("");
+	let foundVowels = 0;
+	charArray.forEach((char) => {
+		vowels.forEach((vowel) => {
+			if (char === vowel) foundVowels += 1;
+		})
+	})
+  return foundVowels;
+} */
+
+function comp(array1, array2){
+	if (!array1|| !array2) return false;
+	const newArray1 = [...array1].sort((a, b) => a - b);
+	const newArray2 = [...array2].sort((a, b) => a - b);
+	let overlap = [];
+	newArray1.forEach((element, index) => {
+		if(element * element === newArray2[index]) overlap.push(1);
+	});
+	return overlap.length === array1.length;
 }
 
 
-console.log("🚀 ~ file: index.js result ", find_average([1,2,3,4]));
+console.log("🚀 ~ file: index.js result ", comp(null, [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]));
