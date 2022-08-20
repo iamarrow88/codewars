@@ -288,7 +288,7 @@ return dnaArray.join("");
   return foundVowels;
 } */
 
-function comp(array1, array2){
+/* function comp(array1, array2){
 	if (!array1|| !array2) return false;
 	const newArray1 = [...array1].sort((a, b) => a - b);
 	const newArray2 = [...array2].sort((a, b) => a - b);
@@ -297,7 +297,19 @@ function comp(array1, array2){
 		if(element * element === newArray2[index]) overlap.push(1);
 	});
 	return overlap.length === array1.length;
+} */
+
+
+function timer (){
+	const currentTime = new Date().getTime();
+  console.log("🚀 ~ file: index.js ~ line 305 ~ timer ~ currentTime", currentTime)
+	setTimeout(() => {
+		console.log("Delayed for 1 second.");
+		const endTime = new Date().getTime();
+	const delta = (endTime - currentTime) / 1000;
+  console.log("🚀 ~ file: index.js ~ line 310 ~ setTimeout ~ delta", delta)
+	}, 1000)
+	
 }
 
-
-console.log("🚀 ~ file: index.js result ", comp(null, [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]));
+console.log("🚀 ~ file: index.js result ", timer());
