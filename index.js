@@ -300,7 +300,7 @@ return dnaArray.join("");
 } */
 
 
-function timer (){
+/* function timer (){
 	const currentTime = new Date().getTime();
   console.log("🚀 ~ file: index.js ~ line 305 ~ timer ~ currentTime", currentTime)
 	setTimeout(() => {
@@ -310,6 +310,52 @@ function timer (){
   console.log("🚀 ~ file: index.js ~ line 310 ~ setTimeout ~ delta", delta)
 	}, 1000)
 	
-}
+} */
 
-console.log("🚀 ~ file: index.js result ", timer());
+/* var summation = function (num) {
+	const arr = [];
+  for(let i = 0; i < num; i++) {
+		arr.push(i + 1);
+	}
+
+	const res = arr.reduce((acc, el) => {
+		return acc + el;
+	})
+	return res;
+} */
+
+/* function check(a, x) {
+  const res = a.findIndex((el) => {
+		return el === x;
+  });
+	return res !== -1;
+} */
+
+
+/* function reverseWords(str) {
+	const words = str.split(" ");
+	const res = words.map((el) => {
+		return el.split("").reverse().join("");
+	})
+	return res.join(" ");
+} */
+
+var Singleton = function(){
+  var obj = {};
+  function init(){
+		if (!obj) {
+			obj = init();
+		} else {
+			return obj;
+		}
+} 
+function test() {
+	return 1;
+}
+return obj;
+};
+
+const a1 = Singleton();
+const a2 = Singleton(); 
+
+console.log("🚀 ~ file: index.js result ", a1, a2, a1 === a2);
