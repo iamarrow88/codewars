@@ -340,22 +340,58 @@ return dnaArray.join("");
 	return res.join(" ");
 } */
 
-var Singleton = function(){
-  var obj = {};
-  function init(){
-		if (!obj) {
-			obj = init();
-		} else {
-			return obj;
+/* class Singleton {
+  constructor(){
+		if(typeof Singleton.instance === "object") {
+			return Singleton.instance;
 		}
-} 
-function test() {
-	return 1;
-}
-return obj;
+		Singleton.instance = this;
+		return this;
+	}
+	test() {
+    return 1;
+  }
 };
 
-const a1 = Singleton();
-const a2 = Singleton(); 
+const a1 = new Singleton();
+const a2 = new Singleton(); 
+ */
 
-console.log("🚀 ~ file: index.js result ", a1, a2, a1 === a2);
+/* class Dog {
+  constructor(name, age, gender, species, size, master, loyal) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.species = species;
+    this.legs = 4;
+    this.size = size;
+    this.master = master;
+    this.loyal = true;
+  }
+}
+
+class Lablador extends Dog {
+	constructor(name, age, gender, master){
+		super(name, age, gender, master);
+    this.species = "Labrador";
+    this.size = "Large";
+    this.loyal = true;
+	}
+}; 
+const Larry = new Lablador("Larry", 5, "male", "Scott");*/
+
+function getRealFloor(n) {
+	let res;
+	if(n <= 0) {
+		res = n;
+	} else if (n >= 1 && n <= 13) {
+		res = (n - 1);
+	} else {
+		res = (n - 2);
+	}
+	return res;
+}
+
+
+console.log("🚀 ~ file: index.js result ", getRealFloor(1));
+console.log("🚀 ~ file: index.js result ", getRealFloor(15));
