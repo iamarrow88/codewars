@@ -380,7 +380,7 @@ class Lablador extends Dog {
 }; 
 const Larry = new Lablador("Larry", 5, "male", "Scott");*/
 
-function getRealFloor(n) {
+/* function getRealFloor(n) {
 	let res;
 	if(n <= 0) {
 		res = n;
@@ -390,8 +390,17 @@ function getRealFloor(n) {
 		res = (n - 2);
 	}
 	return res;
+} */
+
+function number(array){
+  let res = [];
+	array.forEach((el,index) => {
+		
+	})
 }
 
 
-console.log("🚀 ~ file: index.js result ", getRealFloor(1));
-console.log("🚀 ~ file: index.js result ", getRealFloor(15));
+console.log("🚀 ~ file: index.js result ", number(["a", "b", "c"]));
+/* console.log("🚀 ~ file: index.js result ", getRealFloor(15)); */
+
+module.exports = number
