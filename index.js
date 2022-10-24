@@ -4,8 +4,8 @@
 		return el * el;
 	})
   console.log("🚀 ~ file: index.js ~ line 6 ~ mapArray ~ mapArray", mapArray)
-  
-	
+
+
   return +mapArray.join("");
 } */
 
@@ -48,7 +48,7 @@
 			result.push(STATUS[0]);
 		}
 	});
-	return result; 
+	return result;
 } */
 
 /* function accum(s) {
@@ -116,7 +116,7 @@
 		}
 		return acc;
 	}, {});
-	
+
 
 	return Object.keys(res).sort().join("");
 } */
@@ -309,7 +309,7 @@ return dnaArray.join("");
 	const delta = (endTime - currentTime) / 1000;
   console.log("🚀 ~ file: index.js ~ line 310 ~ setTimeout ~ delta", delta)
 	}, 1000)
-	
+
 } */
 
 /* var summation = function (num) {
@@ -354,7 +354,7 @@ return dnaArray.join("");
 };
 
 const a1 = new Singleton();
-const a2 = new Singleton(); 
+const a2 = new Singleton();
  */
 
 /* class Dog {
@@ -377,7 +377,7 @@ class Lablador extends Dog {
     this.size = "Large";
     this.loyal = true;
 	}
-}; 
+};
 const Larry = new Lablador("Larry", 5, "male", "Scott");*/
 
 /* function getRealFloor(n) {
@@ -392,15 +392,123 @@ const Larry = new Lablador("Larry", 5, "male", "Scott");*/
 	return res;
 } */
 
-function number(array){
+/* function number(array){
   let res = [];
 	array.forEach((el,index) => {
-		
+
 	})
 }
+ */
+/* function recycle(array) {
+	let bin = {
+		paper: [],
+		glass: [],
+		organic: [],
+		plastic: [],
+		sort: function(obj) {
+			const materials = Object.keys(this).slice(0, -1);
+			materials.forEach((material) => {
+				if (material === obj.material) {
+					this[material].push(obj.type);
+				}
+				if(obj.secondMaterial && material === obj.secondMaterial) {
+					this[material].push(obj.type);
+				}
+			})
+			return this;
+		}
+	}
+	array.forEach((obj) => {
+		bin.sort(obj);
+	})
+
+  return [bin.paper, bin.glass, bin.organic, bin.plastic];
+} */
+
+/* var runLengthEncoding = function(str){
+const charArray = str.toUpperCase().split("");
+let res = [];
+let count = 1;
+charArray.forEach((char, index) => {
+	if(charArray[index + 1]) {
+		if (char === charArray[index + 1]) {
+			count += 1;
+		} else {
+			res.push([count, char]);
+			count = 1;
+		}
+	} else {
+		res.push([count, char]);
+	}
+})
+return res;
+} */
+/* function myLanguages(results) {
+	const res = Object.entries(results).filter(([lang, score]) => score >= 60).sort(([lang1, score1], [lang2, score2]) => score2 - score1).map(([lang, score]) => lang);
+	return res;
+}
+ */
+
+/* function brightest(colors){
+  const hex = colors.map((color) => {
+		const digits = color.slice(1);
+		let rgb = [];
+		if (digits.length > 3) {
+			let acc = 0;
+			for (let i = 0; i < digits.length; i++){
+				if (i % 2 === 0) {
+					acc += digits[i].toString();
+					rgb.push(acc);
+					acc = 0;
+				} else {
+					acc = parseInt(digits[i], 16);
+				}
+			}
+		}
+		return rgb;
+	});
+
+	const res = parseInt(colors, 16)
+	return res;
+}
+ */
+/* function getLengthOfMissingArray(arrayOfArrays) {
+	if(!arrayOfArrays) {
+		return 0;
+	}
+
+	if (arrayOfArrays.length === 0 || arrayOfArrays[0].length === 0) {
+		return 0
+	}
+
+	if(arrayOfArrays.some((array)=> array.length === 0)) {
+		return 0;
+	}
+	if (arrayOfArrays.some((array)=> array === null)) {
+		return 0;
+	}
+	const lengths = arrayOfArrays.map((array) => array.length).sort((a, b) => a - b);
+	const result = lengths.filter((length, index, array) => {
+		if (index !== (array.length - 1)) {
+			return (length + 1) !== array[index + 1]
+		}
+	})
+	return +result + 1;
+} */
 
 
-console.log("🚀 ~ file: index.js result ", number(["a", "b", "c"]));
-/* console.log("🚀 ~ file: index.js result ", getRealFloor(15)); */
+var runningSum = function(nums) {
+	let res = nums.slice(0,1);
+	let acc = nums.slice(0,1);
+	for(let i = 0; i < nums.length; i++) {
+		if(nums[i + 1]) {
+			acc += nums[i + 1]
+			res.push(acc);
+		}
+	}
+		return res;
+};
 
-module.exports = number
+
+
+console.log(runningSum([[7,0,84,78,26,-63,-24,96,-42,15,65,-99,-39,100,84,-38,-95,-33,-69,100,-36,-45,84,-39,61,-77,85,-34,-15,-32,-31,-18,-75,90,-98,-85,39,66]]));
