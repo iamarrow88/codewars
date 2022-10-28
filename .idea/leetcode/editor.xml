@@ -3,6 +3,17 @@
   <component name="LeetcodeEditor">
     <option name="projectConfig">
       <map>
+        <entry key="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[13]Roman to Integer.js">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/doc/content/[13]Roman to Integer.md" />
+              <option name="frontendQuestionId" value="leetcode.com13" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[13]Roman to Integer.js" />
+              <option name="titleSlug" value="roman-to-integer" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[1]Two Sum.js">
           <value>
             <LeetcodeEditor>
@@ -11,6 +22,39 @@
               <option name="host" value="leetcode.com" />
               <option name="path" value="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[1]Two Sum.js" />
               <option name="titleSlug" value="two-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[20]Valid Parentheses.js">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/doc/content/[20]Valid Parentheses.md" />
+              <option name="frontendQuestionId" value="leetcode.com20" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[20]Valid Parentheses.js" />
+              <option name="titleSlug" value="valid-parentheses" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[21]Merge Two Sorted Lists.js">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/doc/content/[21]Merge Two Sorted Lists.md" />
+              <option name="frontendQuestionId" value="leetcode.com21" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[21]Merge Two Sorted Lists.js" />
+              <option name="titleSlug" value="merge-two-sorted-lists" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[9]Palindrome Number.js">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/doc/content/[9]Palindrome Number.md" />
+              <option name="frontendQuestionId" value="leetcode.com9" />
+              <option name="host" value="leetcode.com" />
+              <option name="path" value="$PROJECT_DIR$/../../../../../Temp/leetcode/editor/en/[9]Palindrome Number.js" />
+              <option name="titleSlug" value="palindrome-number" />
             </LeetcodeEditor>
           </value>
         </entry>

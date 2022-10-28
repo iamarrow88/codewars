@@ -1292,6 +1292,7 @@ const arrayOfTags = [
 }
 
 
+/*
 	function sortByKeyWords(word) {
 		const arrayOfResultIndexes = [];
 		const titles = data.items.map((element) => element.snippet.title);
@@ -1301,5 +1302,50 @@ const arrayOfTags = [
 		arrayOfResultIndexes.map(item => data.items[item]);
 		return res;
 	}
+*/
 
-	console.log(sortByKeyWords('t'));
+/*	console.log(sortByKeyWords('t'));*/
+
+/*var twoSum = function(nums, target) {
+	let index = 0;
+	for (let i = 0; i < nums.length; i++) {
+		index += 1;
+		const tail = nums.slice((i + 1), nums.length);
+		const res = tail.map(number => nums[i] + number);
+		if(res.includes(target)) {
+			index += res.indexOf(target);
+			return [i, index];
+		}
+	}
+	return -1;
+};*/
+
+
+var isValid = function(s) {
+	if(s.length % 2 !== 0) return false;
+	const openBrackets = ['(', '{', '['];
+	const closeBrackets = [')', '}', ']'];
+	let stack = [];
+
+	let splittedS = s.split('');
+
+	for (let i = 0; i < splittedS.length; i++) {
+		let item = splittedS[i];
+		let indexOpen = openBrackets.findIndex(el => el === item);
+		if(indexOpen !== -1) {
+			stack.push(closeBrackets[indexOpen]);
+		} else {
+			let pop = stack.pop();
+			if(pop !== item) {
+				return false;
+			}
+		}
+	}
+	if(stack.length === 0){
+		return true;
+	} else {
+		return false;
+	}
+};
+
+console.log(isValid("[](){}[]"));
