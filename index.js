@@ -1359,7 +1359,8 @@ var isIsomorphic = function(s, t) {
 				return false;
 			}
 		} else {
-			if(sObj[splittedS[i]] !== t[i]) {
+			let chunk = t.split('').slice(0, i);
+			if(chunk.includes(t[i])) {
 				return false;
 			} else {
 				sObj[splittedS[i]] = t[i];
