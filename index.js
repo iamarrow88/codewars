@@ -1321,6 +1321,7 @@ const arrayOfTags = [
 };*/
 
 
+/*
 var isValid = function(s) {
 	if(s.length % 2 !== 0) return false;
 	const openBrackets = ['(', '{', '['];
@@ -1347,5 +1348,25 @@ var isValid = function(s) {
 		return false;
 	}
 };
+*/
 
-console.log(isValid("[](){}[]"));
+var isIsomorphic = function(s, t) {
+	let splittedS = s.split('');
+	let sObj = {};
+	for(let i = 0; i < splittedS.length; i++) {
+		if(Object.keys(sObj).includes(splittedS[i])){
+			if(sObj[splittedS[i]] !== t[i]) {
+				return false;
+			}
+		} else {
+			if(sObj[splittedS[i]] !== t[i]) {
+				return false;
+			} else {
+				sObj[splittedS[i]] = t[i];
+			}
+		}
+	}
+	return true;
+};
+
+console.log(isIsomorphic("badc", "baba"));
