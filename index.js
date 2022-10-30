@@ -1350,7 +1350,7 @@ var isValid = function(s) {
 };
 */
 
-var isIsomorphic = function(s, t) {
+/*var isIsomorphic = function(s, t) {
 	let splittedS = s.split('');
 	let sObj = {};
 	for(let i = 0; i < splittedS.length; i++) {
@@ -1368,6 +1368,110 @@ var isIsomorphic = function(s, t) {
 		}
 	}
 	return true;
+};*/
+
+/*var isSubsequence = function(s, t) {
+	if(s.length === 1 && t.length === 1 && s !== t){
+		return false;
+	} else if(s.length === 1 && !t.split('').includes(s)) {
+		return false;
+	} else if(s.length === 2) {
+		let firstInd = t.split('').findIndex(x => x === s[0]);
+		let secondInd = t.split('').slice(firstInd + 1, t.length).findIndex(x => x === s[1]);
+		if(firstInd < secondInd){
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		const firstChars = t.split('').reduce((acc, el, index) => {
+			if(acc[el]) {
+				acc[el].push(index);
+			} else {
+				acc[el] = [];
+				acc[el].push(index)
+			}
+			return acc;
+		}, {});
+
+		console.log(firstChars);
+
+		for(let i = 0; i < firstChars)
+	}
+	let templateS = s.slice(1, s.length - 1);
+	let chunk = t.slice(t.split('').findIndex(x => x === s[0]) + 1, t.split('').findIndex(x => x === s[s.length - 1]));
+
+	for (let i = 0; i < templateS.length; i++){
+		if(!chunk.split('').includes(templateS[i])) {
+			return false;
+		}
+	}
+	return true;
 };
 
-console.log(isIsomorphic("badc", "baba"));
+console.log(isSubsequence("abcb", "baaccdbcbbb"));*/
+
+/*
+function check(firstInd, secondCharInd, chunk){
+	const nextInd = t.split('').slice(firstInd + 1, t.length).findIndex(s[secondCharInd]);
+	return nextInd;
+}
+*/
+
+/*const indexes = {
+	'char': 'abrakadabra',
+	'index': [1, 5, 6],
+	method(){
+		let res = [];
+		for (let i = 0; i < indexes['index'].length; i++) {
+			res.push(indexes['char'][indexes['index'][i]])
+		}
+		return  res.join('');
+	}
+}*/
+
+var isSubsequence = function(s, t) {
+	let sIndex = 0;
+
+	const tArrayCharsIndexes = t.split('').reduce((acc, el, index) => {
+		if(acc[el]) {
+			acc[el].push(index);
+		} else {
+			acc[el] = [];
+			acc[el].push(index);
+		}
+		return acc;
+	}, {});
+	tArrayCharsIndexes['result'] = [];
+	check(sIndex, tArrayCharsIndexes['result']);
+	function check(sIndex, place) {
+		//const charCount = tArrayCharsIndexes[s[sIndex]].length;
+		let currentCharArray = tArrayCharsIndexes[s[sIndex]];
+		for(let i = 0; i < currentCharArray.length; i++) {
+			console.log('currentCharArray is ' + currentCharArray)
+			place[i] = [];
+			place[i].push(s[sIndex]);
+/*			console.log('place[i] is ');
+			console.log(place[i]);
+			console.log('tArrayCharsIndexes is ');
+			console.log(tArrayCharsIndexes);*/
+			if(i === (currentCharArray.length - 1)) {
+				let chunk = t.split('').slice(currentCharArray[i + 1], currentCharArray.length);
+				console.log('chunk2 is ' + chunk)
+				/*if(chunk.includes(s[1])) {
+					let next = sIndex + 1;
+					check(next);*/
+				} else {
+				let chunk = t.split('').slice(currentCharArray[i + 1], (currentCharArray[i + 1]) - 1);
+				console.log(t.split('').slice(currentCharArray[i + 1], (currentCharArray[i + 1]) - 1))
+
+			}
+			}
+		return tArrayCharsIndexes;
+	}
+
+	return tArrayCharsIndexes;
+/*	console.log(tArrayCharsIndexes[s[0]].length)*/
+};
+
+console.log(isSubsequence('adv', 'afdfdbgvg afdbghv'));
