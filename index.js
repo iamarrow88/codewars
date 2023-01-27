@@ -1430,7 +1430,7 @@ function check(firstInd, secondCharInd, chunk){
 	}
 }*/
 
-var isSubsequence = function(s, t) {
+/*var isSubsequence = function(s, t) {
 	let sIndex = 0;
 
 	const tArrayCharsIndexes = t.split('').reduce((acc, el, index) => {
@@ -1451,16 +1451,16 @@ var isSubsequence = function(s, t) {
 			console.log('currentCharArray is ' + currentCharArray)
 			place[i] = [];
 			place[i].push(s[sIndex]);
-/*			console.log('place[i] is ');
+/!*			console.log('place[i] is ');
 			console.log(place[i]);
 			console.log('tArrayCharsIndexes is ');
-			console.log(tArrayCharsIndexes);*/
+			console.log(tArrayCharsIndexes);*!/
 			if(i === (currentCharArray.length - 1)) {
 				let chunk = t.split('').slice(currentCharArray[i + 1], currentCharArray.length);
 				console.log('chunk2 is ' + chunk)
-				/*if(chunk.includes(s[1])) {
+				/!*if(chunk.includes(s[1])) {
 					let next = sIndex + 1;
-					check(next);*/
+					check(next);*!/
 				} else {
 				let chunk = t.split('').slice(currentCharArray[i + 1], (currentCharArray[i + 1]) - 1);
 				console.log(t.split('').slice(currentCharArray[i + 1], (currentCharArray[i + 1]) - 1))
@@ -1471,7 +1471,437 @@ var isSubsequence = function(s, t) {
 	}
 
 	return tArrayCharsIndexes;
-/*	console.log(tArrayCharsIndexes[s[0]].length)*/
-};
+/!*	console.log(tArrayCharsIndexes[s[0]].length)*!/
+};*/
 
-console.log(isSubsequence('adv', 'afdfdbgvg afdbghv'));
+/*
+const array = ["ABCDEF", "123456", "00FF00", "000000", "FFFFFF", "00FF00"];
+const res = array.sort((a, b) => a - b);
+
+console.log(res);
+*/
+
+/*var rotate = function(nums, k) {
+	const tail = nums.splice(nums.length - k, nums.length);
+	const res = tail.concat(nums);
+	return res;
+
+};*/
+
+/*function brightest(colors){
+	function getDecimal(num) {
+		for(let i = 0; i < num.length; i++) {
+			if(i = 0){
+				let a = num[i].toString(16);
+				console.log(a)
+			}
+		}
+	}
+
+	let newColors = colors.map(elem => {
+		let num = elem.slice(1, elem.length);
+		let result = [num.slice(0,2), num.slice(2, 4), num.slice(4, 6)];
+		return result;
+	})
+	console.log(newColors);
+	let rgbColors = newColors.map(el => {
+		let a, b;
+		for(let i = 0; i < el.length; i++){
+			console.log(el[i][0])
+			a = parseInt(el[i][0], 16) * 16;
+			b = parseInt(el[i][1], 16);
+		}
+		return a + b;
+	})
+	console.log(rgbColors);
+
+}
+
+console.log(brightest(["#001000", "#000000"]));
+
+console.log(parseInt('C', 16) * 16)*/
+
+
+/*const array = ["ABCDEF", "123456", "00FF00", "000000", "FFFFFF", "00FF00"];
+
+console.log(typeof array)*/
+
+/*n = 10, d = 1
+the k*k are 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100
+We are using the digit 1 in: 1, 16, 81, 100. The total count is then 4.*/
+/*function nbDig(n, d) {
+	let numArray = [];
+	for (let i = 1; i <= n; i++) {
+		numArray.push((i * i).toString());
+	}
+	let wordsArray = numArray.map(number => number.split('')).flat(1);
+	let acc = 0;
+	for(let k = 0; k < wordsArray.length; k ++) {
+		let t = Number(wordsArray[k]);
+		if(t === d) {
+			acc++;
+		}
+	}
+	if(d === 0) acc += 1;
+	return acc;
+}*/
+
+
+/*
+function findMissing(arr1, arr2) {
+	let newArr1 = arr1.sort((a, b) => a - b);
+	let newArr2 = arr2.sort((a, b) => a - b);
+
+	let min = newArr1.length < newArr2.length ? newArr1 : newArr2;
+	let max = newArr1.length > newArr2.length ? newArr1 : newArr2;
+	let result = 0;
+	for (let i = 0; i < max.length; i++) {
+		if(min[i] !== max[i]) return max[i];
+	}
+}
+*/
+
+/*const list1 = [
+	{'4': 'dog' }, {'2': 'took'}, {'3': 'his'},
+	{'-2': 'Vatsan'}, {'5': 'for'}, {'6': 'a'}, {'12': 'spin'}
+];
+function sentence(List) {
+	let object = {};
+	for (let i = 0; i < List.length; i++) {
+		let key = Object.keys(List[i])[0];
+		let value = Object.values(List[i])[0];
+		object[key] = value;
+	}
+	const numbers = Object.keys(object).sort((a, b) => a - b);
+	const sentence = numbers.map(number => object[number]);
+
+	return sentence;
+}*/
+
+
+/*const suspects = {'James': ['Jacob', 'Bill', 'Lucas'],
+	'Johnny': ['David', 'Kyle', 'Lucas'],
+	'Peter': ['Lucy', 'Kyle']};
+const deadMen = ['Lucas', 'Bill'];
+
+function killer(suspectInfo, dead) {
+	const suspects = Object.keys(suspectInfo);
+	const seenMen = Object.values(suspectInfo);
+	let evidenceInfo = {};
+	let acc = 0;
+	suspects.forEach(suspect => {
+		evidenceInfo[acc] = [];
+		for (let i = 0; i < suspectInfo[suspect].length; i++) {
+			for (let k = 0; k < dead.length; k++){
+				if(suspectInfo[suspect][i].includes(dead[k])) {
+					evidenceInfo[acc].push(true);
+				} else {
+					evidenceInfo[acc].push(false);
+				}
+			}
+		}
+		acc++;
+	});
+	let result;
+	for (let a = 0; a < Object.keys(evidenceInfo).length; a++){
+		const numberOfSeenMen = evidenceInfo[a].filter(word => word === true);
+		if (numberOfSeenMen.length === dead.length) result = suspects[a];
+		console.log(numberOfSeenMen);
+	}
+	return result;
+}*/
+
+/*function addQuestion(questions) {
+	for(let i = 0; i < questions.length; i++){
+		questions[i]['usersAnswer'] = null;
+	}
+	return questions;
+}*/
+
+/*function dataReverse(data) {
+	const numberOfBites = data.length / 8;
+	let arrayOfBites = [];
+	let startIndex = 0; //1,1,1,1,1,1,1,1 |,0,0,0,0,0,0,0,0| ,0,0,0,0,1,1,1,1, | 1,0,1,0,1,0,1,0
+	let res = [];
+	for (let i = 1; i < numberOfBites + 1; i++){
+		let lastIndex = i * 8;
+		let chunk = data.slice(startIndex, lastIndex);
+		arrayOfBites.unshift(chunk);
+		startIndex = lastIndex;
+	}
+
+	return arrayOfBites.flat();
+}*/
+
+/*
+function whoseBicycle(diary1, diary2, diary3) {
+	const diaryArray = [diary1, diary2, diary3];
+	console.log(diaryArray);
+
+	let whoseHighestScore = {
+		'0': {
+			'age': 14,
+			'score': null,
+			'answer': 'I need to buy a bicycle for my first son.'
+		},
+		'1': {
+			'age': 9,
+			'score': null,
+			'answer': 'I need to buy a bicycle for my second son.'
+		},
+		'2': {
+			'age': 8,
+			'score': null,
+			'answer': 'I need to buy a bicycle for my third son.'
+		}
+	}
+	let arrayOfHighestScore = [];
+	let maxScore = 0;
+
+	let arrayOfMaxScores = [];
+	for(let i = 0; i < diaryArray.length; i++){
+		let score = Object.values(diaryArray[i]);
+		let commonMark = score.reduce((acc, mark) => acc + mark);
+		whoseHighestScore[i]['score'] = commonMark;
+		if(maxScore < commonMark) maxScore = commonMark;
+		arrayOfMaxScores.push(commonMark);
+	}
+	/!*console.log(arrayOfMaxScores);
+	console.log(maxScore);*!/
+	let indexesForMaxScoreSons = [];
+	arrayOfMaxScores.forEach((el, index) => {
+		if(el === maxScore) {
+			indexesForMaxScoreSons.push(index);
+		}
+	})
+	let res;
+	console.log(indexesForMaxScoreSons)
+	if(indexesForMaxScoreSons.length === 1) {
+		res = whoseHighestScore[indexesForMaxScoreSons[0]]['answer'];
+	} else {
+		res = whoseHighestScore[indexesForMaxScoreSons[indexesForMaxScoreSons.length - 1]]['answer'];
+	}
+
+	return res;
+}
+*/
+
+/*
+function spread(func, args) {
+	return func(...args);
+}
+*/
+
+/*
+function combine(...objects) {
+	let numberOfObjects = objects;
+	/!*let accumulator = objects.slice(0, 1)[0];*!/
+	let accumulator = {};
+
+	console.log(numberOfObjects);
+
+	for(let i = 0; i < numberOfObjects.length; i++) {
+		let keys = Object.keys(numberOfObjects[i]);
+		for(let k = 0; k < keys.length; k++) {
+			if(accumulator[keys[k]]) {
+				accumulator[keys[k]] += numberOfObjects[i][keys[k]];
+			} else {
+				accumulator[keys[k]] = numberOfObjects[i][keys[k]];
+			}
+		}
+	}
+
+	return accumulator;
+}
+*/
+
+
+/*function maxTriSum(numbers){
+	let sortingObject = numbers.reduce((acc, elem) => {
+		if(acc[elem]){
+			acc[elem] += 1;
+		} else {
+			acc[elem] = 1;
+		}
+		return acc;
+	}, {});
+	let theHighestNumbers = Object.keys(sortingObject).sort((a, b) => b - a).slice(0, 3);
+	let result = theHighestNumbers.reduce((acc, number) => Number(acc) + Number(number));
+	console.log(result);
+
+
+	return result;
+}*/
+
+
+/*function minSum(arr) {
+	const numberOfPairs = arr.length / 2;
+	const modifiedArray = [...arr].sort((a, b) => b - a);
+	let result = 0;
+	for(let i = 0; i < numberOfPairs; i++) {
+		console.log(modifiedArray[i]);
+		console.log(modifiedArray[modifiedArray.length - 1 - i]);
+
+		result += modifiedArray[i] * modifiedArray[modifiedArray.length - 1 - i];
+		console.log(result);
+	}
+	return result;
+}*/
+
+/*function highAndLow(numbers){
+	const sortedArray = numbers.split(' ').sort((a, b) => +a - +b);
+	return [sortedArray[sortedArray.length - 1], sortedArray[0]].join(' ');
+}*/
+
+/*function disemvowel(str) {
+	return str.match(/[^aouie]/gmi).join('');
+}*/
+
+
+
+/*function isIsogram(str){
+	const charsArray = str.split('');
+	const charsObject = charsArray.reduce((acc, char) => {
+
+		if(acc[char.toLowerCase()]) {
+			acc[char.toLowerCase()] += 1;
+		} else {
+			acc[char.toLowerCase()] = 1;
+		}
+		return acc
+	}, {});
+	return Object.values(charsObject).every(number => number === 1);
+}*/
+
+/*
+function explode(s) {
+	const splittedArrayOfNumbers = s.split('');
+	const result = [];
+	splittedArrayOfNumbers.forEach(el => {
+		let i = 0;
+		while (i < +el) {
+			result.push(el);
+			i++;
+		};
+	})
+	return result.join('');
+}
+*/
+
+/*
+function duplicateEncode(word){
+	const charsArray = word.split('');
+	const charsObject = charsArray.reduce((acc, char) => {
+		if(acc[char.toLowerCase()]) {
+			acc[char.toLowerCase()] += 1;
+		} else {
+			acc[char.toLowerCase()] = 1;
+		}
+		return acc;
+	}, {});
+	let resultArray = charsArray.map(char => {
+		if(charsObject[char.toLowerCase()] === 1) {
+			return '(';
+		} else {
+			return ')';
+		}
+	});
+	return resultArray.join('');
+}
+*/
+
+/*function solution(number){
+	if (number <= 0) {
+		return 0;
+	} else {
+		let result = 0;
+		for (let i = 0 ; i < number; i++) {
+			if(i % 3 === 0 || i % 5 === 0) {
+				result += i;
+			}
+		}
+		return result;
+	}
+}*/
+
+
+/*
+* | HEAD | <----------- TAIL ------------> |
+[  1,  2,  3,  4,  5,  6,  7,  8,  9,  10]
+| <----------- INIT ------------> | LAST |
+
+head [x] = x
+tail [x] = []
+init [x] = []
+last [x] = x
+* */
+
+/*function head(x){
+	return x[0];
+}
+
+function tail(x) {
+	return x.slice(1, x.length);
+}
+
+function init(x) {
+	return x.slice(0, -1);
+}
+
+function last(x) {
+	return x[x.length - 1];
+}*/
+
+
+/*function numberOfPairs(gloves) {
+  const glovesTypes = gloves.reduce((acc, gloves) => {
+	  if(acc[gloves]) {
+		  acc[gloves] += 1;
+	  } else {
+		  acc[gloves] = 1;
+	  }
+	   return acc;
+  }, {});
+  let result = 0;
+  Object.values(glovesTypes).forEach(numberOfGloves => {
+	  if(numberOfGloves % 2 === 0){
+		  result += numberOfGloves / 2;
+	  } else {
+		  result += Math.floor(numberOfGloves / 2);
+	  }
+  });
+
+  return result;
+}*/
+
+
+/*function createSecretHolder(secret) {
+	const object = {
+		secret: secret,
+		getSecret: function (){
+			return this.secret;
+		},
+		setSecret: function(newSecret){
+			this.secret = newSecret;
+		}
+	};
+	return object;
+}*/
+
+/*function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+	const ONE_DAY = new Date('January 2, 1970 00:00:00 GMT+00:00').getTime();
+	const endDateMs = new Date(expirationDate).getTime();
+	console.log(endDateMs);
+	const endEndDate = endDateMs + ONE_DAY
+	if(new Date(expirationDate).getTime() + ONE_DAY > new Date(currentDate).getTime() && enteredCode === correctCode) {
+		return true;
+	} else {
+		return false;
+	}
+}*/
+
+console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'));
+
+
+
+
