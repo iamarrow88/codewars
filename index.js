@@ -1,3 +1,45 @@
+function strCount(obj){
+	let acc = 0;
+	function countStrs(arr){
+		if(typeof arr === 'object'){
+			if(arr){
+				if (arr.length) {
+					arr.forEach(el => {
+						if (typeof el === 'string') {
+							acc += 1;
+						} else if (typeof el === 'object') {
+							countStrs(el);
+						}
+					})
+				} else {
+					Object.values(arr).forEach(el => {
+						if (typeof el === 'string') {
+							acc += 1;
+						} else if (typeof el === 'object') {
+							countStrs(el);
+						}
+					});
+				}
+			}
+		} else {
+			if(typeof arr === 'string') acc += 1;
+		}
+	}
+	countStrs(obj);
+	return acc;
+}
+
+console.log(strCount({
+	first: "1",
+	second: "2",
+	third: false,
+	fourth: ["anytime",2,3,4],
+	fifth:  null
+}));
+
+
+
+
 /* function squareDigits(num){
 	const arrayNum = num.toString().split('');
 	const mapArray = arrayNum.map((el) => {
@@ -1899,8 +1941,134 @@ function last(x) {
 		return false;
 	}
 }*/
+/*
+* []                                -->  "no one likes this"
+["Peter"]                         -->  "Peter likes this"
+["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+* */
+/*function likes(names) {
+	if(names.length === 0) {
+		return "no one likes this";
+	} else if(names.length === 1) {
+		return `${names[0]} likes this`;
+	} else if(names.length === 2) {
+		return `${names[0]} and ${names[1]} like this`;
+	} else if(names.length === 3) {
+		return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+	} else {
+		return `${names[0]}, ${names[1]} and ${names.length - 2} like this`;
+	}
+}*/
 
-console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'));
+/*function toWeirdCase(string){
+	const wholeCharsArray = string.split('');
+	let counter = 0;
+	for(let i = 0; i < wholeCharsArray.length; i++) {
+		if(wholeCharsArray[i] === ' ') {
+			counter = 1;
+		}
+		if(counter % 2 === 0) {
+			wholeCharsArray[i] = wholeCharsArray[i].toUpperCase();
+			counter += 1;
+		} else {
+			counter += 1;
+		}
+	}
+
+	return wholeCharsArray.join('');
+}*/
+
+/*function findOdd(A) {
+	const accumulator = A.reduce((acc, el) => {
+		if(acc[el]) {
+			acc[el] += 1;
+		} else {
+			acc[el] = 1;
+		}
+		return acc;
+	}, {});
+	let res = 0;
+	for(let i = 0; i < Object.values(accumulator).length; i++) {
+		console.log('%cindex.js line:1952 accumulator[i]', 'color: #007acc;', accumulator[i]);
+		console.log('%cindex.js line:1953 Object.keys(accumulator)[i]', 'color: #007acc;', Object.keys(accumulator)[i]);
+		if(Object.values(accumulator)[i] % 2 !== 0) res = Object.keys(accumulator)[i];
+	}
+	return parseInt(res);
+
+}*/
+
+/*function spinWords(string){
+	const wordsArray = string.split(' ');
+	const newArr = wordsArray.map(word => word.length >= 5 ? word.split('').reverse().join('') : word);
+	return newArr.join(' ');
+}*/
+
+/*
+function digitalRoot(n) {
+	let result = 0;
+	function sum(n){
+		if(n.toString().length > 1) {
+			let str = n.toString().split('')
+			/!*let str = n.toString().split('').reduce((acc, number) => acc + number);*!/
+			/!*sum(str);*!/
+		} else {
+			result = n;
+		}
+		return '';
+	}
+	sum(n);
+	return result;
+}
+*/
+
+/*function rgb(r, g, b){
+	function round(number) {
+		if(number < 0) {
+			return 0;
+		} else if(number > 255) {
+			return 255;
+		} else {
+			return number;
+		}
+	};
+	let codeKeeper = {
+		'R': [],
+		'F': []
+	};
+	function toHex(colorNumber, codeKeeper){
+		const arr = (colorNumber / 16).toString().split('.');
+		codeKeeper['R'].push(arr[0]);
+		codeKeeper['F'].push(arr[1]);
+		const second = (parseInt(codeKeeper['R']) / 16).toString().split('.');
+		const latest = second[1];
+		codeKeeper['R'].push(second[0]);
+		codeKeeper['F'].push(second[1]);
+		console.log(arr)
+		const last = (parseInt(latest) / 16).toString().split('.');
+		codeKeeper['R'].push(last[0]);
+		codeKeeper['F'].push(last[1]);
+		return arr;
+	}
+	toHex(255, codeKeeper)
+	console.log(codeKeeper);
+
+	const corrected = [...arguments].map(colorCode => {
+		let color = round(colorCode);
+
+	});
+
+
+	return corrected;
+}*/
+
+/*function arrayDiff(a, b) {
+	if(a.length === 0) return [];
+	if(b.length === 0) return a;
+	return a.map(el => b.includes(el) ? undefined : el).filter(el => el !== undefined);
+}*/
+
 
 
 
