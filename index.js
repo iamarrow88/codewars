@@ -1,4 +1,221 @@
-function strCount(obj){
+
+
+
+
+console.log(rgb( 255, 255, 300)); //FFFFFF
+console.log(rgb(0, 0, -20)) // '000000'
+/*function rgb(r, g, b){
+	const colorArray = [...arguments].map(color => {
+		let rgbColor;
+		if(color > 255) {
+			rgbColor = 255;
+		} else if(color < 0) {
+			rgbColor = 0;
+		} else {
+			rgbColor = color;
+		}
+		rgbColor = rgbColor.toString(16).toUpperCase();
+		if(rgbColor.length < 2) rgbColor = '0' + rgbColor;
+
+		return rgbColor;
+	});
+
+	return colorArray.join('');
+}*/
+
+/*var whatTimeIsIt = function(angle) {
+	let hours = Math.trunc(angle * 2 / 60);
+	hours = hours ? hours : '12';
+	hours = hours >= 10 ? hours : '0'+ hours
+	let minutes;
+	if(hours === '12') {
+		minutes = Math.trunc(angle * 2);
+	} else {
+		minutes = Math.trunc(angle * 2 - hours * 60);
+	}
+	minutes = minutes && minutes >= 0 ? minutes : '00';
+	minutes = minutes.toString().length === 1 ? '0' + minutes : minutes;
+	return `${hours}:${minutes}`;
+}*/
+
+/*function deepCount(a){
+	let counter = 0;
+	function arrayIn(element){
+		counter += 1;
+		if(element.length && typeof element !== 'string'){
+			element.forEach(el => {
+				arrayIn(el);
+			});
+		}
+	}
+	arrayIn(a);
+	return counter - 1;
+}*/
+
+
+/*
+function nthFibo(n) {
+	const fiboSequence = [0, 1];
+	if(n === 1 || n === 2) return fiboSequence[n - 1];
+
+	for (let i = 2; i < n; i++) {
+		fiboSequence.push(fiboSequence[i - 2] + fiboSequence[i - 1]);
+	}
+	return fiboSequence[n - 1];
+}
+*/
+
+/*
+function bingo(ticket, win){
+	const winCounter = {};
+	ticket.forEach(array => {
+		winCounter[array] = 0;
+		for (let i = 0; i < array[0].length; i++) {
+			if(array[0].charCodeAt(i) === array[1]) {
+				winCounter[array] += 1;
+				break;
+			}
+		}
+	})
+
+	const result = Object.values(winCounter).reduce((acc, wins) => acc + wins);
+
+	return result >= win ? 'Winner!' : 'Loser!';
+}
+*/
+
+//console.log(bingo( [['VV',86], ['YNMT',75], ['PF',71], ['XUGLT',76], ['BHRCLTFO',71]], 3)); //'Winner!'
+//console.log(bingo([['ABC', 65], ['HGR', 74], ['BYHT', 74]], 1)); //160
+
+
+/*function findOutlier(integers){
+	const container = {
+		'even': [],
+		'odd': []
+	}
+	integers.forEach(integer => {
+		if(integer % 2 === 0) {
+			container['even'].push(integer);
+		} else {
+			container['odd'].push(integer);
+		}
+	});
+	if(container['odd'].length < container['even'].length) {
+		return container['odd'][0];
+	} else {
+		return container['even'][0];
+	}
+}*/
+
+
+/*function isPrime(num) {
+	if(num <= 1) return false;
+	if(num < 4) return true;
+	if(num % 2 === 0) return false;
+	if(num === 5 || num === 7) return true;
+	if(num % 5 === 0) return false;
+	if(num % 3 === 0) return false;
+/!*	const headOfNum = num.toString().slice(0, num.toString().length - 1);
+	const taiOfNum = num.toString().slice(num.toString().length - 1, num.toString().length);
+	console.log(`headOfNum ${headOfNum}`, `taiOfNum ${taiOfNum}`);*!/
+	if(num % 7 === 0) return false;
+	return true;
+}*/
+
+/*function getCard() {
+	const bingoMap ={
+		'B': [5, 1, 15, []],
+		'I': [5, 16, 30, []],
+		'N': [4, 31, 45, []],
+		'G': [5, 46, 60, []],
+		'O': [5, 61, 75, []]
+	}
+	function getRandomNumber(min, max) {
+		return (Math.random() * (max - min) + min).toFixed();
+	}
+	for(let i = 0; i < Object.keys(bingoMap).length; i++) {
+		for(let k = 0; k < Object.values(bingoMap)[i][0]; k++) {
+			function findUniqueCode() {
+				const code = `${Object.keys(bingoMap)[i].toUpperCase()}${getRandomNumber(Object.values(bingoMap)[i][1], Object.values(bingoMap)[i][2])}`;
+				if(Object.values(bingoMap)[i][3].includes(code)) {
+					findUniqueCode();
+				} else {
+					Object.values(bingoMap)[i][3].push(code);
+				}
+			}
+			findUniqueCode();
+		}
+	}
+	return ((bingoMap.B[3].concat(bingoMap.I[3])).concat(bingoMap.N[3].concat(bingoMap.G[3]))).concat(bingoMap.O[3]);
+}*/
+
+/*function filter_list(l) {
+	let toNumberList = [];
+	for(let i = 0; i < l.length; i++) {
+		if(typeof l[i] === "number") {
+			toNumberList.push(+l[i]);
+			}
+		}
+	return toNumberList;
+}*/
+
+/*function nearestSq(n){
+	const base = Math.sqrt(n);
+	if(base === Math.trunc(base)) return n;
+	const less = Math.trunc(base);
+	const more = Math.trunc(base) + 1;
+	if(n - Math.pow(less, 2) > Math.pow(more, 2) - n) {
+		return Math.pow(more, 2);
+	} else {
+		return Math.pow(less, 2);
+	}
+}*/
+
+/*var isSquare = function(n){
+	if(n < 0) return false;
+	const initialNumber = Math.sqrt(n);
+	if(initialNumber === Math.trunc(initialNumber)) {
+		return true;
+	} else {
+		return false;
+	}
+}*/
+
+/*function getMiddle(s) {
+	let res;
+	if(s.length % 2 === 0) {
+		res = s.slice(s.length / 2 - 1, s.length / 2 + 1);
+	} else {
+		res = s.slice(s.length / 2, s.length / 2 + 1);
+	}
+	return res;
+}*/
+
+/*
+const countBits = function(n) {
+	let bits = n.toString(2).split('').reduce((acc, digit) => {
+		if(digit === '1')  acc += 1;
+		return acc;
+	}, 0);
+	return bits;
+};
+
+console.log(countBits(1234));
+
+*/
+
+
+
+/*
+function descendingOrder(n){
+	return Number(n.toString().split('').sort((a, b) => +b - +a).join(''));
+}
+
+console.log(descendingOrder(145263));
+*/
+
+
+/*function strCount(obj){
 	let acc = 0;
 	function countStrs(arr){
 		if(typeof arr === 'object'){
@@ -27,17 +244,7 @@ function strCount(obj){
 	}
 	countStrs(obj);
 	return acc;
-}
-
-console.log(strCount({
-	first: "1",
-	second: "2",
-	third: false,
-	fourth: ["anytime",2,3,4],
-	fifth:  null
-}));
-
-
+}*/
 
 
 /* function squareDigits(num){
