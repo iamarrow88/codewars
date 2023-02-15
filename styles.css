@@ -5,3 +5,12 @@ div {
 a {
     line-height: 2;
 }
+
+.links {
+    display: flex;
+    flex-direction: row;
+}
+
+.links div {
+    line-height: 2;
+}

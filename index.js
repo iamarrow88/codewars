@@ -1,9 +1,27 @@
 
+function brightest(colors){
+	let rgbArray = [];
+	const answersAcc = {};
+	colors.forEach(color => {
+		if(!answersAcc[color]) answersAcc[color] = [];
+		const trimmedColor = color.slice(1, 7);
+		let rgb = 0;
+		for(let i = 0; i < trimmedColor.length; i += 2) {
+			let col = parseInt(trimmedColor.slice(i, i + 2), 16);
+			if(col > rgb) rgb = col;
+		}
+		rgbArray.push(rgb);
+		answersAcc[color].push(rgb);
+	});
+	const maxColor = Math.max(...rgbArray);
+	const index = Object.values(answersAcc).flat().indexOf(maxColor);
+	return Object.keys(answersAcc)[index];
+}
 
 
 
-console.log(rgb( 255, 255, 300)); //FFFFFF
-console.log(rgb(0, 0, -20)) // '000000'
+console.log(brightest( ["#001000", "#000000"])); //"#001000"
+console.log(brightest(["#ABCDEF", "#123456"])) // "#ABCDEF"
 /*function rgb(r, g, b){
 	const colorArray = [...arguments].map(color => {
 		let rgbColor;
