@@ -1,5 +1,29 @@
+function addDate(startDate, duration) {
+	let formatDate = new Date(startDate)
+	let endDate = formatDate;
+	endDate.setDate(formatDate.getDate() + duration)
 
-function brightest(colors){
+	return endDate.toISOString().slice(0, 10)
+}
+console.log(addDate('2023-03-08', 8)); //'2015-03-09'
+
+/*
+function unluckyDays(year){
+	let dozens = 0;
+	for(let i = 1; i <= 12; i++) {
+		let month;
+		month = i < 10 ? `0${i}` : i;
+		const date = new Date(`${year}-${month}-13`)
+		console.log(date);
+		console.log(date.getDay());
+		if(date.getDay() === 5) dozens += 1;
+	}
+	return dozens;
+}
+*/
+
+//console.log(unluckyDays(1001)) // 3
+/*function brightest(colors){
 	let rgbArray = [];
 	const answersAcc = {};
 	colors.forEach(color => {
@@ -16,12 +40,8 @@ function brightest(colors){
 	const maxColor = Math.max(...rgbArray);
 	const index = Object.values(answersAcc).flat().indexOf(maxColor);
 	return Object.keys(answersAcc)[index];
-}
+}*/
 
-
-
-console.log(brightest( ["#001000", "#000000"])); //"#001000"
-console.log(brightest(["#ABCDEF", "#123456"])) // "#ABCDEF"
 /*function rgb(r, g, b){
 	const colorArray = [...arguments].map(color => {
 		let rgbColor;
@@ -2000,7 +2020,7 @@ function combine(...objects) {
 	return result;
 }*/
 
-
+/* cvxvxv */
 /*function minSum(arr) {
 	const numberOfPairs = arr.length / 2;
 	const modifiedArray = [...arr].sort((a, b) => b - a);
