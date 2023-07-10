@@ -1,11 +1,29 @@
-function addDate(startDate, duration) {
+function getLabels(startDay, days){
+	let daysArray = [];
+	for(let i = 0; i <= days; i++){
+	  const addDays = new Date(startDay).getDate() + i;
+	  console.log(addDays);
+
+	  const addedDays = new Date().setDate(addDays);
+	  console.log(addedDays);
+
+
+	  const formatDate = new Date(addedDays).toISOString().slice(0, 10);
+	  daysArray.push(formatDate);
+	  console.log(daysArray);
+	}
+  }
+
+getLabels('2023-05-20', 5);
+
+/* function addDate(startDate, duration) {
 	let formatDate = new Date(startDate)
 	let endDate = formatDate;
 	endDate.setDate(formatDate.getDate() + duration)
 
 	return endDate.toISOString().slice(0, 10)
 }
-console.log(addDate('2023-03-08', 8)); //'2015-03-09'
+console.log(addDate('2023-03-08', 8)); //'2015-03-09' */
 
 /*
 function unluckyDays(year){
@@ -2314,7 +2332,20 @@ function digitalRoot(n) {
 	return a.map(el => b.includes(el) ? undefined : el).filter(el => el !== undefined);
 }*/
 
+/* function getDatesDifference(date1, date2){
+	const date1formatted = new Date(date1);
+	const date2formatted = new Date(date2);
+	console.log(date1formatted);
+	console.log(date2formatted);
 
+	const differenceMs = date2formatted - date1formatted;
+	  
+	const msInDay = 1000* 60 * 60 * 24;
+	const differenceInDays = differenceMs / msInDay;
+
+	console.log(differenceInDays);
+	
+} */
 
 
 
