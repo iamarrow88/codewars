@@ -1,3 +1,4 @@
+/*
 function count(string) {
 	if(string.length === 0) {
 		return {};
@@ -17,6 +18,7 @@ function count(string) {
 }
 
 console.log(count('aba'));
+*/
 
 /*function whoIsPaying(name){
 	if(name.length <= 2){
