@@ -1,3 +1,116 @@
+function count(string) {
+	if(string.length === 0) {
+		return {};
+	} else {
+		const splittedArray = string.split('');
+
+		return splittedArray.reduce((acc, char) => {
+			if(acc[char]){
+				acc[char] += 1;
+			} else {
+				acc[char] = 1;
+			}
+
+			return acc;
+		}, {});
+	}
+}
+
+console.log(count('aba'));
+
+/*function whoIsPaying(name){
+	if(name.length <= 2){
+		return [name];
+	} else {
+		return [name, name.slice(0, 2)];
+	}
+}
+
+console.log(whoIsPaying('name'));*/
+
+/*function cookie(x){
+	if(typeof x === "string") {
+		return "Who ate the last cookie? It was Zach!"
+	} else if(typeof x === "number") {
+		return "Who ate the last cookie? It was Monica!"
+	} else {
+		return "Who ate the last cookie? It was the dog!"
+	}
+}
+
+console.log(cookie(true));*/
+
+
+/*function greet(language) {
+	const langs = {
+		english: 'Welcome',
+		czech: 'Vitejte',
+		danish: 'Velkomst',
+		dutch: 'Welkom',
+		estonian: 'Tere tulemast',
+		finnish: 'Tervetuloa',
+		flemish: 'Welgekomen',
+		french: 'Bienvenue',
+		german: 'Willkommen',
+		irish: 'Failte',
+		italian: 'Benvenuto',
+		latvian: 'Gaidits',
+		lithuanian: 'Laukiamas',
+		polish: 'Witamy',
+		spanish: 'Bienvenido',
+		swedish: 'Valkommen',
+		welsh: 'Croeso'
+	}
+
+	if(Object.keys(langs).includes(language)){
+		return langs[language];
+	} else {
+		return 'Welcome';
+	}
+}
+
+console.log(greet('dutch'));*/
+
+
+/*function findShort(s){
+	const wordsArray = s.split(' ');
+	let min = wordsArray[0].length;
+	let minWordIndex = 0;
+
+	for(let i = 1; i < wordsArray.length; i++){
+		if(wordsArray[i].length < min) {
+			console.log(wordsArray[i].length < min);
+			minWordIndex = i;
+			min = wordsArray[i].length;
+		}
+	}
+	return minWordIndex;
+}
+
+console.log(findShort('bitcoin take over the world maybe who knows perhaps'));*/
+
+/*
+function XO(str) {
+	const letters = ['x', 'o'];
+
+	const obj = str.split('').reduce((acc, el) => {
+		if(letters.includes(el.toLowerCase())) {
+			if(acc[el.toLowerCase()]){
+				acc[el.toLowerCase()] += 1;
+			} else {
+				acc[el.toLowerCase()] = 1;
+			}
+		}
+		return acc;
+	}, {});
+	return Object.values(obj).every(el => el % 2 === 0);
+}
+
+
+console.log(XO("Oo"));
+*/
+
+
 /* function squareDigits(num){
 	const arrayNum = num.toString().split('');
 	const mapArray = arrayNum.map((el) => {
@@ -1430,7 +1543,7 @@ function check(firstInd, secondCharInd, chunk){
 	}
 }*/
 
-var isSubsequence = function(s, t) {
+/*var isSubsequence = function(s, t) {
 	let sIndex = 0;
 
 	const tArrayCharsIndexes = t.split('').reduce((acc, el, index) => {
@@ -1451,16 +1564,16 @@ var isSubsequence = function(s, t) {
 			console.log('currentCharArray is ' + currentCharArray)
 			place[i] = [];
 			place[i].push(s[sIndex]);
-/*			console.log('place[i] is ');
+/!*			console.log('place[i] is ');
 			console.log(place[i]);
 			console.log('tArrayCharsIndexes is ');
-			console.log(tArrayCharsIndexes);*/
+			console.log(tArrayCharsIndexes);*!/
 			if(i === (currentCharArray.length - 1)) {
 				let chunk = t.split('').slice(currentCharArray[i + 1], currentCharArray.length);
 				console.log('chunk2 is ' + chunk)
-				/*if(chunk.includes(s[1])) {
+				/!*if(chunk.includes(s[1])) {
 					let next = sIndex + 1;
-					check(next);*/
+					check(next);*!/
 				} else {
 				let chunk = t.split('').slice(currentCharArray[i + 1], (currentCharArray[i + 1]) - 1);
 				console.log(t.split('').slice(currentCharArray[i + 1], (currentCharArray[i + 1]) - 1))
@@ -1471,7 +1584,57 @@ var isSubsequence = function(s, t) {
 	}
 
 	return tArrayCharsIndexes;
-/*	console.log(tArrayCharsIndexes[s[0]].length)*/
-};
+/!*	console.log(tArrayCharsIndexes[s[0]].length)*!/
+};*/
 
-console.log(isSubsequence('adv', 'afdfdbgvg afdbghv'));
+/*
+const array = ["ABCDEF", "123456", "00FF00", "000000", "FFFFFF", "00FF00"];
+const res = array.sort((a, b) => a - b);
+
+console.log(res);
+*/
+
+/*var rotate = function(nums, k) {
+	const tail = nums.splice(nums.length - k, nums.length);
+	const res = tail.concat(nums);
+	return res;
+
+};*/
+
+/*function brightest(colors){
+	function getDecimal(num) {
+		for(let i = 0; i < num.length; i++) {
+			if(i = 0){
+				let a = num[i].toString(16);
+				console.log(a)
+			}
+		}
+	}
+
+	let newColors = colors.map(elem => {
+		let num = elem.slice(1, elem.length);
+		let result = [num.slice(0,2), num.slice(2, 4), num.slice(4, 6)];
+		return result;
+	})
+	console.log(newColors);
+	let rgbColors = newColors.map(el => {
+		let a, b;
+		for(let i = 0; i < el.length; i++){
+			console.log(el[i][0])
+			a = parseInt(el[i][0], 16) * 16;
+			b = parseInt(el[i][1], 16);
+		}
+		return a + b;
+	})
+	console.log(rgbColors);
+
+}
+
+console.log(brightest(["#001000", "#000000"]));
+
+console.log(parseInt('C', 16) * 16)*/
+
+
+const array = ["ABCDEF", "123456", "00FF00", "000000", "FFFFFF", "00FF00"];
+
+console.log(typeof array)
