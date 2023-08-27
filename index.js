@@ -1,3 +1,33 @@
+/**
+ * @param {number[][]} accounts
+ * @return {number}
+ */
+/* var maximumWealth = function (accounts) {
+	
+	return Math.max(...accounts.map(account => account.reduce((acc, sum) => acc + sum)));
+}; */
+
+var fizzBuzz = function (n) {
+	let result = [];
+	for (let i = 1; i <= n; i++) {
+		let chunk = '';
+		if (i % 3 !== 0 && i % 5 !== 0) {
+			chunk += i;
+		} else {
+			if (i % 3 === 0) {
+				chunk += 'Fizz';
+			}
+			if (i % 5 === 0) {
+				chunk += 'Buzz';
+			}
+		}
+		result.push(chunk);
+	}
+	return result;
+};
+
+console.log(fizzBuzz(5))
+
 /*
 function count(string) {
 	if(string.length === 0) {
@@ -118,14 +148,14 @@ console.log(XO("Oo"));
 	const mapArray = arrayNum.map((el) => {
 		return el * el;
 	})
-  console.log("🚀 ~ file: index.js ~ line 6 ~ mapArray ~ mapArray", mapArray)
+	console.log("🚀 ~ file: index.js ~ line 6 ~ mapArray ~ mapArray", mapArray)
 
 
-  return +mapArray.join("");
+	return +mapArray.join("");
 } */
 
 /* function duplicateCount(text){
-  const textArray = text.split("").reduce((acc, el) => {
+	const textArray = text.split("").reduce((acc, el) => {
 		const char = el.toLowerCase();
 		if(acc.hasOwnProperty(char)){
 			acc[char] += 1;
@@ -182,11 +212,11 @@ console.log(XO("Oo"));
 /* function areYouPlayingBanjo(name) {
 	let result;
 	name[0] === 'R' || name[0] === 'r' ? result = `${name} plays banjo` : result = `${name} does not play banjo`;
-  return result;
+	return result;
 } */
 
 /* function alphabetPosition(text) {
-  const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+	const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 	const chars = text.match(/\w+/g).join('').toLowerCase().split('');
 	const result = [];
 	for (let i = 0; i < chars.length; i++) {
@@ -204,7 +234,7 @@ console.log(XO("Oo"));
 
 
 /* function friend(friends){
-  return friends.filter((el) => {
+	return friends.filter((el) => {
 		return el.length === 4;
 	});
 } */
@@ -222,7 +252,7 @@ console.log(XO("Oo"));
 } */
 
 /* function longest(s1, s2) {
-  let s1Arr = s1.split("");
+	let s1Arr = s1.split("");
 	let s2Arr = s2.split("");
 	const commonArray = s1Arr.concat(s2Arr);
 	const res = commonArray.reduce((acc, elem) => {
@@ -257,22 +287,22 @@ return dnaArray.join("");
 } */
 
 /* function high(x){
-  const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    const arrayOfArrays = x.split(" ");
-    const hightestIndex = arrayOfArrays.map((el) => {
-        let highIndex = 0;
-        for (let i = 0; i < el.length; i++){
-            alphabet.forEach((elem, ind) => {
-                if (el[i] === elem) {
-                    if (highIndex < (ind + 1)) {
+	const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+		const arrayOfArrays = x.split(" ");
+		const hightestIndex = arrayOfArrays.map((el) => {
+				let highIndex = 0;
+				for (let i = 0; i < el.length; i++){
+						alphabet.forEach((elem, ind) => {
+								if (el[i] === elem) {
+										if (highIndex < (ind + 1)) {
 											highIndex = ind + 1;
-                    }
-                }
-            })
-        }
-        return highIndex;
-    });
-    console.log("🚀 ~ file: index.js ~ line 163 ~ hightestIndex ~ hightestIndex", hightestIndex)
+										}
+								}
+						})
+				}
+				return highIndex;
+		});
+		console.log("🚀 ~ file: index.js ~ line 163 ~ hightestIndex ~ hightestIndex", hightestIndex)
 		const filtredArr = [...hightestIndex];
 		filtredArr.sort((a, b) => {
 			return b - a;
@@ -280,7 +310,7 @@ return dnaArray.join("");
 
 		console.log(filtredArr);
 		const index = hightestIndex.findIndex((el) => { return el == filtredArr[0]})
-    return arrayOfArrays[index];
+		return arrayOfArrays[index];
 } */
 
 /* function maps(x){
@@ -289,7 +319,7 @@ return dnaArray.join("");
 
 
 /* function isPangram(string){
-  const charArray = string.toLowerCase().split("").reduce((acc, el) => {
+	const charArray = string.toLowerCase().split("").reduce((acc, el) => {
 		if(el.match(/\w+/g)) {
 			if(acc[el]) {
 				acc[el] += 1;
@@ -306,7 +336,7 @@ return dnaArray.join("");
 
 
 /* function isValidWalk(walk) {
-  const walkMap = walk.reduce((acc, el) => {
+	const walkMap = walk.reduce((acc, el) => {
 		if(acc[el]) {
 			acc[el] += 1;
 		} else {
@@ -330,7 +360,7 @@ return dnaArray.join("");
 } */
 
 /* function booleanToString(b){
-  return String(b);
+	return String(b);
 } */
 
 
@@ -340,7 +370,7 @@ return dnaArray.join("");
  */
 
 /* function greet(name){
-  return `Hello, ${name} how are you doing today?`;
+	return `Hello, ${name} how are you doing today?`;
 } */
 
 /* function removeSmallest(numbers) {
@@ -360,7 +390,7 @@ return dnaArray.join("");
 } */
 
 /* function towerBuilder(nFloors) {
-  let res = [];
+	let res = [];
 	const chars = 1 + 2 * (nFloors - 1);
 	for (let i = 0; i < nFloors; i++) {
 		const floorChars = 1 + 2 * i;
@@ -373,14 +403,14 @@ return dnaArray.join("");
 
 /* function find_average(array) {
 	let res;
-  if (array.length <= 0) {
+	if (array.length <= 0) {
 		res = 0;
 	} else {
 		res = array.reduce((acc, el) => {
 			return acc + el;
 		}) / array.length;
 	}
-  return res;
+	return res;
 } */
 
 /* function sumMix(x){
@@ -400,7 +430,7 @@ return dnaArray.join("");
 			if (char === vowel) foundVowels += 1;
 		})
 	})
-  return foundVowels;
+	return foundVowels;
 } */
 
 /* function comp(array1, array2){
@@ -417,19 +447,19 @@ return dnaArray.join("");
 
 /* function timer (){
 	const currentTime = new Date().getTime();
-  console.log("🚀 ~ file: index.js ~ line 305 ~ timer ~ currentTime", currentTime)
+	console.log("🚀 ~ file: index.js ~ line 305 ~ timer ~ currentTime", currentTime)
 	setTimeout(() => {
 		console.log("Delayed for 1 second.");
 		const endTime = new Date().getTime();
 	const delta = (endTime - currentTime) / 1000;
-  console.log("🚀 ~ file: index.js ~ line 310 ~ setTimeout ~ delta", delta)
+	console.log("🚀 ~ file: index.js ~ line 310 ~ setTimeout ~ delta", delta)
 	}, 1000)
 
 } */
 
 /* var summation = function (num) {
 	const arr = [];
-  for(let i = 0; i < num; i++) {
+	for(let i = 0; i < num; i++) {
 		arr.push(i + 1);
 	}
 
@@ -440,9 +470,9 @@ return dnaArray.join("");
 } */
 
 /* function check(a, x) {
-  const res = a.findIndex((el) => {
+	const res = a.findIndex((el) => {
 		return el === x;
-  });
+	});
 	return res !== -1;
 } */
 
@@ -456,7 +486,7 @@ return dnaArray.join("");
 } */
 
 /* class Singleton {
-  constructor(){
+	constructor(){
 		if(typeof Singleton.instance === "object") {
 			return Singleton.instance;
 		}
@@ -464,8 +494,8 @@ return dnaArray.join("");
 		return this;
 	}
 	test() {
-    return 1;
-  }
+		return 1;
+	}
 };
 
 const a1 = new Singleton();
@@ -473,24 +503,24 @@ const a2 = new Singleton();
  */
 
 /* class Dog {
-  constructor(name, age, gender, species, size, master, loyal) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-    this.species = species;
-    this.legs = 4;
-    this.size = size;
-    this.master = master;
-    this.loyal = true;
-  }
+	constructor(name, age, gender, species, size, master, loyal) {
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.species = species;
+		this.legs = 4;
+		this.size = size;
+		this.master = master;
+		this.loyal = true;
+	}
 }
 
 class Lablador extends Dog {
 	constructor(name, age, gender, master){
 		super(name, age, gender, master);
-    this.species = "Labrador";
-    this.size = "Large";
-    this.loyal = true;
+		this.species = "Labrador";
+		this.size = "Large";
+		this.loyal = true;
 	}
 };
 const Larry = new Lablador("Larry", 5, "male", "Scott");*/
@@ -508,7 +538,7 @@ const Larry = new Lablador("Larry", 5, "male", "Scott");*/
 } */
 
 /* function number(array){
-  let res = [];
+	let res = [];
 	array.forEach((el,index) => {
 
 	})
@@ -537,7 +567,7 @@ const Larry = new Lablador("Larry", 5, "male", "Scott");*/
 		bin.sort(obj);
 	})
 
-  return [bin.paper, bin.glass, bin.organic, bin.plastic];
+	return [bin.paper, bin.glass, bin.organic, bin.plastic];
 } */
 
 /* var runLengthEncoding = function(str){
@@ -565,7 +595,7 @@ return res;
  */
 
 /* function brightest(colors){
-  const hex = colors.map((color) => {
+	const hex = colors.map((color) => {
 		const digits = color.slice(1);
 		let rgb = [];
 		if (digits.length > 3) {
@@ -653,7 +683,7 @@ const arrayOfTags = [
 	"angular 7"
 ];
 
-	const data = {
+const data = {
 	"kind": "youtube#videoListResponse",
 	"etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/Cmodw7c5XPTM8Yg3kMXelihxek4\"",
 	"pageInfo": {
